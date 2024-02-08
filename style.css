@@ -1,0 +1,47 @@
+body{
+    background-color: azure;
+    margin: 0px;
+    padding: 0px;
+}
+
+header{
+    background-color: aquamarine;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50px;
+}
+
+main{
+    max-width: fit-content;
+    padding-top: 50px;
+    padding-left: 300px;
+    
+}
+
+.task-form{
+    display: flex;
+    gap: 20px;
+}
+
+.list{
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#task , #task-deadline, #priority{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-task{
+    background-color: #7fffd4;
+    color:black;
+    cursor: pointer;
+    border-radius: 5px; 
+    border: 1px solid #ccc;
+}
