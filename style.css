@@ -4,55 +4,182 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: azure;
+body {
     margin: 0px;
     padding: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    font-size: 18px;
 }
 
-header{
-    background-color: aquamarine;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 50px;
-}
-
-main{
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    
-}
-
-.task-form{
+header {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #20c997;
+    color: white;
+    padding: 10px 20px; 
+    font-size: 24px;
+    border-bottom: 1px solid #333;
+}
+
+header span {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.toggle-theme {
+    order: 2;
+    margin-left: auto;
+}
+
+.toggle-theme button {
+    background-color: #20c997; 
+    color: white;
+    border: none;
+    padding: 10px 20px; 
+    cursor: pointer;
+    font-size: 16px; 
+    border-radius: 5px; 
+}
+
+.toggle-theme button:hover {
+    background-color: #18a08c;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.task-form {
     margin-bottom: 20px;
 }
 
-.list{
-    border: 1px solid #ddd;
+.list {
+    border: 1px solid #ccc;
+    border-radius: 5px;
     padding: 10px;
 }
 
-#task , #task-deadline, #priority{
-    flex: 1; /* Make form inputs expand to fill available space */
-    padding: 10px;
-    display: flex;
-    border: 1px solid #ccc;
+#task, #priority, #task-deadline {
+    width: calc(33.33% - 10px);
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+#add-task {
+    background-color: #20c997;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
     border-radius: 5px;
 }
 
-#add-task{
-    background-color: #7fffd4;
-    color:black;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px; 
-    border: 1px solid #ccc;
+#add-task:hover {
+    background-color: #18a08c;
 }
 
-#add-task:hover {
-    background-color: #6cbfb9;
+.task-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    animation: fadeIn 0.5s ease;
+}
+
+.task-item.completed {
+    animation: fadeOutRight 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+}
+
+.edit-task, .delete-task {
+    padding: 5px 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.edit-task {
+    background-color: #ffc107;
+    color: black;
+}
+
+.delete-task {
+    background-color: #dc3545;
+    color: white;
+}
+
+.edit-task:hover, .delete-task:hover {
+    opacity: 0.8;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode header {
+    background-color: #222;
+    border-bottom: 1px solid #444;
+}
+
+#task, #priority, #category, #task-deadline, #add-task {
+    flex: 1; 
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.task-form {
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: center;
+}
+
+.categories button,
+.task-item button {
+    background-color: #20c997;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px; 
+    border-radius: 5px; 
+    margin-right: 5px; 
+    margin-bottom: 5px;
+}
+
+.categories button:hover,
+.task-item button:hover {
+    background-color: #18a08c;
 }
